@@ -23,3 +23,11 @@
 
 %.sha1: %
 	printf '%s' "$$(sha1sum $< | cut -d' ' -f1)" > $@
+
+# Java
+
+%.class: %.java
+	javac $<
+bin/%.class: src/%.java
+	mkdir -p bin/
+	cd src && javac -d ../bin/ $*.java
