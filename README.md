@@ -1,6 +1,7 @@
 # Make patterns
 
-A big Makefile containing all kinds of pattern rules.
+A big Makefile containing all kinds of pattern rules,
+to complement the ones built into GNU Make.
 Copy the ones that seem useful to you to your own Makefile.
 
 ## License
