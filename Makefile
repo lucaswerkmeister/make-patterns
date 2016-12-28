@@ -24,3 +24,8 @@
 	bzip2 <$< >$@
 %: %.bz2
 	bunzip2 <$< >$@
+
+# Ceylon
+
+%.sha1: %
+	printf '%s' "$$(sha1sum $< | cut -d' ' -f1)" > $@
