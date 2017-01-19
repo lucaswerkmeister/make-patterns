@@ -31,3 +31,16 @@
 bin/%.class: src/%.java
 	mkdir -p bin/
 	cd src && javac -d ../bin/ $*.java
+
+# Graphviz
+
+%.pdf: %.dot
+	dot -Tpdf -o$@ $<
+%.svg: %.dot
+	dot -Tsvg -o$@ $<
+%.png: %.dot
+	dot -Tpng -o$@ $<
+%.gif: %.dot
+	dot -Tgif -o$@ $<
+%.jpg: %.dot
+	dot -Tjpg -o$@ $<
