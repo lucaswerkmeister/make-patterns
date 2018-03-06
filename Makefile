@@ -44,3 +44,10 @@ bin/%.class: src/%.java
 	dot -Tgif -o$@ $<
 %.jpg: %.dot
 	dot -Tjpg -o$@ $<
+
+# Lilypond
+
+%.pdf: %.ly
+	lilypond --pdf $<
+%.png: %.ly
+	lilypond --png -dpixmap-format=pngalpha $<
